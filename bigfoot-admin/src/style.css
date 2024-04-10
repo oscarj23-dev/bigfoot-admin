@@ -1,0 +1,168 @@
+h1 {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: white;
+}
+
+.new-post {
+    background-color: #051065;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: white;
+}
+
+
+
+a.btn-dark:hover {
+    background-color:white;
+    color: black;
+    border-radius: 20px;
+    padding: 0.7rem 2rem 0.7rem 2rem;
+    width: 20rem;
+}
+
+a.btn-dark {
+    background-color:#FFD25F;
+    color: black;
+    border-radius: 20px;
+    padding: 0.7rem 2rem 0.7rem 2rem;
+    width: 20rem;
+}
+
+a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.main-post-element-container {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.all-post-elements {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 2rem;
+}
+
+.post-creation-field {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.other-post-element-container {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: left;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+.add-post-btns {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+button.btn-dark {
+    width: 21rem;
+    background-color:white;
+    color: black;
+}
+
+input {
+    width: 21rem;
+    flex-grow: 2;
+}
+
+textarea {
+    width: 21rem;
+    flex-grow: 2;
+}
+
+#description {
+    height: 25rem;
+    overflow-y: auto;
+    resize: vertical;
+    white-space: pre-wrap;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.other-post-element-container .post-creation-field {
+    padding-bottom: 3rem;
+}
+
+
+.select-field {
+    padding-bottom: 8rem;
+}
+
+/* posts-add-post */
+
+.post-button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: fill;
+    color: black;
+}
+
+.post-title {
+    color: black;
+    text-align: left;
+    padding-bottom: 0;
+}
+
+
+.all-post-history {
+    display: flexbox;
+    padding: 2rem;
+    margin: auto;
+}
+
+
+
+.btn-secondary {
+    padding: 1rem;
+    text-align: right;
+    background-color: white;
+    color: black;
+}
+
+.btn-danger {
+    padding: 1rem;
+    text-align: right;
+}
+
+.post-history-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
