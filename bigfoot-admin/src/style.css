@@ -9,7 +9,7 @@ h2 {
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    color: white;
+    color: black;
 }
 
 .new-post {
@@ -165,4 +165,50 @@ label {
     align-items: right;
     flex-wrap: wrap;
     flex-direction: row;
+}
+
+/* "post created successfully" pop up styling */
+
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: #44c767; /* green */
+    color: white;
+    opacity: 0.9;
+    transition: opacity 0.6s; /* fade out alert */
+}
+
+.alert .close {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    background-color: transparent;
+    text-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+.alert .close:hover {
+    color: black;
+}
+
+/* colville image seal styling */
+
+.homepage-container { 
+    text-align: center; 
+}
+
+.image-container {
+    display: inline-block;
+}
+
+.centered-image {
+    display: inline-block;
+    vertical-align: middle;
 }

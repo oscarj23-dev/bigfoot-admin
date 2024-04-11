@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import './style.css';
+import { PostCard } from './PostCard';
 // import { NavLink } from 'react-router-dom';
 
-function PostCard({ post }) {
-    return (
-        <div className="card mb-4">
-        <div className="card-body">
-            <h2 className="post-title">{post.title}</h2>
-            <h3>{post.type}</h3>
-            <p>{post.description}</p>
-            <div className="post-history-buttons">
-                <a href="#" className="btn btn-secondary">Edit</a>
-                <a href="#" className="btn btn-danger">Delete</a>
-            </div>
-        </div>
-    </div>
-    );
-}
+// function PostCard({ post }) {
+//     return (
+//         <div className="card mb-4">
+//         <div className="card-body">
+//             <h2 className="post-title">{post.title}</h2>
+//             <h3>{post.type}</h3>
+//             <p>{post.description}</p>
+//             <div className="post-history-buttons">
+//                 <a href="#" className="btn btn-secondary">Edit</a>
+//                 <a href="#" className="btn btn-danger">Delete</a>
+//             </div>
+//         </div>
+//     </div>
+//     );
+// }
 
 export function PostsAddPost() {
     const [showPostForm, setShowPostForm] = useState(false);
@@ -26,8 +27,13 @@ export function PostsAddPost() {
     const [descValue, setDescValue] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
 
+    // state variable for success message 
+    const [postCreated, setPostCreated] = useState(false); 
+
     const handleAddPostBtn = () => {
         setShowPostForm(!showPostForm);
+        // reset success message 
+        setPostCreated(false);
 
         if (!showPostForm) {
             setTitleValue('');
@@ -45,6 +51,7 @@ export function PostsAddPost() {
 
         const newPostCards = [...postHistory, newPost];
         setPostHistory(newPostCards);
+        setPostCreated(true)
     }
 
 
@@ -132,6 +139,14 @@ export function PostsAddPost() {
                 )}
 
             </section>
+            { postCreated && (
+                <div className="alert alert-success">
+                Post created successfully!
+                <button type="button" className="close" onClick={() => setPostCreated(false)}>
+                    <span>&times;</span>
+                </button>
+            </div>
+            )}
 
             <section>
                 <div className="all-post-history">
