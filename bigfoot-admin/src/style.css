@@ -22,7 +22,7 @@ h2 {
 
 
 a.btn-dark:hover {
-    background-color:white;
+    background-color: white;
     color: black;
     border-radius: 20px;
     padding: 0.7rem 2rem 0.7rem 2rem;
@@ -30,7 +30,7 @@ a.btn-dark:hover {
 }
 
 a.btn-dark {
-    background-color:#FFD25F;
+    background-color: #FFD25F;
     color: black;
     border-radius: 20px;
     padding: 0.7rem 2rem 0.7rem 2rem;
@@ -86,7 +86,7 @@ a {
 
 button.btn-dark {
     width: 21rem;
-    background-color:white;
+    background-color: white;
     color: black;
 }
 
@@ -118,6 +118,19 @@ label {
 
 .select-field {
     padding-bottom: 8rem;
+}
+
+.admin-login-button {
+    padding: 10px 10px;
+    background-color: #FFD25F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 53px;
+    right: 5px;
 }
 
 /* posts-add-post */
@@ -174,10 +187,12 @@ label {
     top: 20px;
     right: 20px;
     padding: 20px;
-    background-color: #44c767; /* green */
+    background-color: #44c767;
+    /* green */
     color: white;
     opacity: 0.9;
-    transition: opacity 0.6s; /* fade out alert */
+    transition: opacity 0.6s;
+    /* fade out alert */
 }
 
 .alert .close {
@@ -191,7 +206,7 @@ label {
     transition: 0.3s;
     border: none;
     background-color: transparent;
-    text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .alert .close:hover {
@@ -200,8 +215,8 @@ label {
 
 /* colville image seal styling */
 
-.homepage-container { 
-    text-align: center; 
+.homepage-container {
+    text-align: center;
 }
 
 .image-container {
@@ -220,21 +235,21 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #051065;
-  }
-  
-  li {
+}
+
+li {
     float: left;
-  }
-  
-  li a {
+}
+
+li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
     background-color: black;
-  }
+}
