@@ -1,0 +1,240 @@
+h1 {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: black;
+}
+
+.new-post {
+    background-color: #051065;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: white;
+}
+
+
+
+a.btn-dark:hover {
+    background-color:white;
+    color: black;
+    border-radius: 20px;
+    padding: 0.7rem 2rem 0.7rem 2rem;
+    width: 20rem;
+}
+
+a.btn-dark {
+    background-color:#FFD25F;
+    color: black;
+    border-radius: 20px;
+    padding: 0.7rem 2rem 0.7rem 2rem;
+    width: 20rem;
+}
+
+a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.main-post-element-container {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.all-post-elements {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 2rem;
+}
+
+.post-creation-field {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.other-post-element-container {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: left;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+.add-post-btns {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+button.btn-dark {
+    width: 21rem;
+    background-color:white;
+    color: black;
+}
+
+input {
+    width: 21rem;
+    flex-grow: 2;
+}
+
+textarea {
+    width: 21rem;
+    flex-grow: 2;
+}
+
+#description {
+    height: 25rem;
+    overflow-y: auto;
+    resize: vertical;
+    white-space: pre-wrap;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.other-post-element-container .post-creation-field {
+    padding-bottom: 3rem;
+}
+
+
+.select-field {
+    padding-bottom: 8rem;
+}
+
+/* posts-add-post */
+
+.post-button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: fill;
+    color: black;
+}
+
+.post-title {
+    color: black;
+    text-align: left;
+    padding-bottom: 0;
+}
+
+
+.all-post-history {
+    display: flexbox;
+    padding: 2rem;
+    margin: auto;
+}
+
+
+
+.btn-secondary {
+    padding: 1rem;
+    text-align: right;
+    background-color: white;
+    color: black;
+}
+
+.btn-danger {
+    padding: 1rem;
+    text-align: right;
+}
+
+.post-history-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/* "post created successfully" pop up styling */
+
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: #44c767; /* green */
+    color: white;
+    opacity: 0.9;
+    transition: opacity 0.6s; /* fade out alert */
+}
+
+.alert .close {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    background-color: transparent;
+    text-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+.alert .close:hover {
+    color: black;
+}
+
+/* colville image seal styling */
+
+.homepage-container { 
+    text-align: center; 
+}
+
+.image-container {
+    display: inline-block;
+}
+
+.centered-image {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* nav bar styling */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #051065;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: black;
+  }
