@@ -10,11 +10,15 @@ export function HomePage({ postHistory }) {
             <section className = "homepage-container">
                 <h1>Welcome to the Colville Community Application Admin Homepage</h1>
 
+                <p> 
+                    Save this section for a description of the admin homepage.
+                </p>
+
                 {/* inserting colville seal */}
                 <div className = "image-container"> 
                     <img src={process.env.PUBLIC_URL + '/img/colville-seal.jpg'} alt="Colville Seal" /> 
                 </div>
-
+    
                 <section className="post-button">
                     <Link to="/new-post" className="btn btn-dark">Create New Post</Link>
                 </section>

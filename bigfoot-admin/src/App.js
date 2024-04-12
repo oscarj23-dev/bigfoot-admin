@@ -10,8 +10,9 @@ function App() {
     <div> 
         <nav>
             <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/new-post">New Post</Link></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/new-post">New Post</Link></li>
+              <li><Link to="/feedback">Feedback Form Responses</Link></li>
             </ul>
         </nav>
 
