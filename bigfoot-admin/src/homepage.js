@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
-import { PostCard } from './PostsAddPost';
+import { PostCard } from './create-post';
 
 export function HomePage({ postHistory }) {
     return (
         <div>
             {/* insert navbar section here */}
-            <button class="admin-login-button">Profile</button>
+            <button className="admin-login-button">Profile</button>
             <section className="homepage-container">
                 <h1>Welcome to the Colville Community Application Admin Homepage</h1>
 
