@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import { HomePage } from './homepage';
 import { PostsAddPost } from './PostsAddPost';
+import { FeedbackForm } from './feedbackform';
 
 function App() {
   const [postHistory, setPostHistory] = useState([]);
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/new-post" element={<PostsAddPost postHistory={postHistory} setPostHistory={setPostHistory} />} />
         <Route path="/" element={<HomePage postHistory={postHistory} />} />
+        <Route path="/feedback" element={<FeedbackForm />} />
       </Routes>
 
     </div>
