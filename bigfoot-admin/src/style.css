@@ -13,13 +13,15 @@ h2 {
 }
 
 .new-post {
-    background-color: #051065;
+    background-color: #99999987;
     margin-left: 2rem;
     margin-right: 2rem;
     color: white;
 }
 
-
+.create-post-title-label {
+    color:black;
+}
 
 a.btn-dark:hover {
     background-color: white;
@@ -46,7 +48,6 @@ a {
 
 .main-post-element-container {
     display: flex;
-    /* justify-content: space-around; */
     align-items: flex-start;
     flex-wrap: wrap;
     flex-direction: column;
@@ -143,6 +144,10 @@ label {
     flex-direction: column;
     width: fill;
     color: black;
+}
+
+.create-post-header {
+    color: white;
 }
 
 .post-title {

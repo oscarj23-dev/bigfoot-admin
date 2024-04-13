@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
-import { PostCard } from './PostCard';
+import { PostCard } from './PostsAddPost';
 
 export function HomePage({ postHistory }) {
     return (

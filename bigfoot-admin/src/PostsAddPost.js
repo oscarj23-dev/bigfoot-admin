@@ -1,26 +1,9 @@
 import React, { useState } from 'react';
 import './style.css';
-import { PostCard } from './PostCard';
-// import { NavLink } from 'react-router-dom';
 
-// function PostCard({ post }) {
-//     return (
-//         <div className="card mb-4">
-//         <div className="card-body">
-//             <h2 className="post-title">{post.title}</h2>
-//             <h3>{post.type}</h3>
-//             <p>{post.description}</p>
-//             <div className="post-history-buttons">
-//                 <a href="#" className="btn btn-secondary">Edit</a>
-//                 <a href="#" className="btn btn-danger">Delete</a>
-//             </div>
-//         </div>
-//     </div>
-//     );
-// }
 
-export function PostsAddPost() {
-    const [showPostForm, setShowPostForm] = useState(false);
+export function PostsAddPost(props) {
+
     const [postHistory, setPostHistory] = useState([])
 
     const [titleValue, setTitleValue] = useState('');
@@ -31,15 +14,19 @@ export function PostsAddPost() {
     const [postCreated, setPostCreated] = useState(false); 
 
     const handleAddPostBtn = () => {
-        setShowPostForm(!showPostForm);
         // reset success message 
         setPostCreated(false);
 
-        if (!showPostForm) {
-            setTitleValue('');
-            setDescValue('');
-            setSelectedValue('');
-        };
+
+    }
+
+    const handleDelete = (title, description, type) => {
+        setPostHistory((beforeDelete) => {
+            let indexToDelete = beforeDelete.findIndex((post) => post.description === description && post.title === title && post.type === type);
+            if (indexToDelete != -1) {
+                return [...beforeDelete.slice(0, indexToDelete), ...beforeDelete.slice(indexToDelete + 1)]
+            }
+        });
     }
 
     const addPostCard = (postTitle, postDesc, postType) => {
@@ -89,27 +76,22 @@ export function PostsAddPost() {
             {/* insert navbar section here */}
             <section>
                 <h1>
-                    Your Posts
+                    New Post
                 </h1>
-
-                <section className="post-button">
-                    <button className="btn btn-dark" type="button" onClick={handleAddPostBtn}>{showPostForm ? 'Cancel' : 'Create New Post'}</button>
-                </section>
-                {showPostForm && (
                     <div>
                         <form className="new-post" onSubmit={handleSubmit}>
-                            <h2>Create New Post</h2>
+                            <h2 className="create-post-header">Create New Post</h2>
                             <div className="all-post-elements">
 
                                 <div className="main-post-element-container">
                                     <div className="post-creation-field">
-                                        <label for="title">Title:</label>
+                                        <label className="create-post-title-label" htmlFor="title">Title:</label>
                                         <input id="title" placeholder="-- Add a title --" type="text"
                                             name="title" value={titleValue} onChange={handleTitleChange} required />
                                     </div>
 
                                     <div className="post-creation-field">
-                                        <label for="description">Description:</label>
+                                        <label htmlFor="description">Description:</label>
                                         <textarea id="description" placeholder="-- Add a description --" value={descValue} onChange={handleDescChange} required></textarea>
                                     </div>
                                 </div>
@@ -117,8 +99,8 @@ export function PostsAddPost() {
                                 <div className="other-post-element-container">
                                     <div className="post-creation-field">
                                         <div className="select-field">
-                                            <label for="type">Post Type:</label> <select value={selectedValue} onChange={handleSelectedValueChange}>
-                                                <option value="None">-- Select --</option>
+                                            <label htmlFor="type">Post Type:</label> <select value={selectedValue} onChange={handleSelectedValueChange} required>
+                                                <option value="" disabled hidden>-- Select --</option>
                                                 <option value="Calendar Event">Calendar Event</option>
                                                 <option value="News">News</option>
                                                 <option value="Resources">Resource</option>
@@ -136,7 +118,6 @@ export function PostsAddPost() {
 
                         </form>
                     </div>
-                )}
 
             </section>
             { postCreated && (
@@ -150,11 +131,50 @@ export function PostsAddPost() {
 
             <section>
                 <div className="all-post-history">
-                    {postHistory.map((post, index) => (<PostCard key={index} post={post}/>))}
-                    
+                    {postHistory.length > 0 ? (<PostList posts={postHistory} handleDelete={handleDelete} />) : (<p>Your post history is empty.</p>)}
                 </div>
             </section >
         </div >
     );
 }
 
+export function PostCard({ post, handleDelete }) {
+
+    if (!post) {
+        return null;
+    }
+
+    return (
+        <div className="card mb-4">
+        <div className="card-body">
+            <h2 className="post-title">{post.title}</h2>
+            <h3>{post.type}</h3>
+            <p>{post.description}</p>
+            <div className="post-history-buttons">
+                <a href="#" className="btn btn-danger" onClick={() => handleDelete(post.title, post.description, post.type)}>Delete</a>
+            </div>
+        </div>
+    </div>
+    );
+}
+
+function PostList({ posts, handleDelete }) {
+    if (!posts || posts.length === 0) {
+        return (
+            <div>
+                <p>Your post history is empty.</p>
+            </div>
+        );
+    }
+
+    const postList = posts.map((post, index) => (
+        <PostCard
+            post={post}
+            handleDelete={handleDelete}
+            key={index}
+        />
+    ));
+    return (
+        <div className="card-deck">{postList}</div>
+    );
+}
