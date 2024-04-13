@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './style.css';
+import { NavLink } from 'react-router-dom';
 
 
-export function PostsAddPost(props) {
+export function PostsAddPost({postHistory, setPostHistory}) {
 
-    const [postHistory, setPostHistory] = useState([])
+    // const [postHistory, setPostHistory] = useState([])
 
     const [titleValue, setTitleValue] = useState('');
     const [descValue, setDescValue] = useState('');
@@ -18,15 +19,6 @@ export function PostsAddPost(props) {
         setPostCreated(false);
 
 
-    }
-
-    const handleDelete = (title, description, type) => {
-        setPostHistory((beforeDelete) => {
-            let indexToDelete = beforeDelete.findIndex((post) => post.description === description && post.title === title && post.type === type);
-            if (indexToDelete != -1) {
-                return [...beforeDelete.slice(0, indexToDelete), ...beforeDelete.slice(indexToDelete + 1)]
-            }
-        });
     }
 
     const addPostCard = (postTitle, postDesc, postType) => {
@@ -67,20 +59,24 @@ export function PostsAddPost(props) {
         console.log(postHistory);
     }
 
+    // const handleSuccessClick = (event) => {
+    //     event.preventDefault();
+
+    // }
+
 
 
 
 
     return (
         <div>
-            {/* insert navbar section here */}
             <section>
                 <h1>
                     New Post
                 </h1>
                     <div>
                         <form className="new-post" onSubmit={handleSubmit}>
-                            <h2 className="create-post-header">Create New Post</h2>
+                            <h2 className="create-post-header">Post Creation Form</h2>
                             <div className="all-post-elements">
 
                                 <div className="main-post-element-container">
@@ -122,18 +118,13 @@ export function PostsAddPost(props) {
             </section>
             { postCreated && (
                 <div className="alert alert-success">
-                Post created successfully!
+                Post created successfully! <br/>
+                <NavLink to="/post-history">View in post history</NavLink>
                 <button type="button" className="close" onClick={() => setPostCreated(false)}>
                     <span>&times;</span>
                 </button>
             </div>
             )}
-
-            <section>
-                <div className="all-post-history">
-                    {postHistory.length > 0 ? (<PostList posts={postHistory} handleDelete={handleDelete} />) : (<p>Your post history is empty.</p>)}
-                </div>
-            </section >
         </div >
     );
 }
@@ -158,7 +149,7 @@ export function PostCard({ post, handleDelete }) {
     );
 }
 
-function PostList({ posts, handleDelete }) {
+export function PostList({ posts, handleDelete }) {
     if (!posts || posts.length === 0) {
         return (
             <div>
